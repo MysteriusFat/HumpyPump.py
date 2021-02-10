@@ -8,8 +8,8 @@ class TradingBot:
         self.profit = profit
 
     def SetCoin(self, coin):
-        self.coin = coin
-        self.symbol = coin+'BTC'
+        self.coin = coin.upper()
+        self.symbol = coin.upper()+'BTC'
         self.price = float(self.client.get_symbol_ticker(symbol=self.symbol)['price'])
         self.filters = self.client.get_symbol_info(self.symbol)['filters']
 
